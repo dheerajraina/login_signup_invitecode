@@ -1,9 +1,24 @@
 
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:login_signup_invitecode/services/database.dart';
 
 import 'login_signup_page.dart';
 
+
+
+
+
+
+
+// import 'package:login_signup_invitecode/firebase_options.dart';
+
+
+// import 'package:firebase_core/firebase_core.dart';
+
+// import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 
@@ -25,15 +40,37 @@ class InviteCodePage extends StatefulWidget {
 class _InviteCodePageState extends State<InviteCodePage> {
 
   String _inviteCode='';
+
+  // List result=[];
+  //  var result;
+
+  String validated='';
+
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
 
-  
-    var size =MediaQuery.of(context).size;
+    
+
 
     
-    return Scaffold(
 
+    var size =MediaQuery.of(context).size;
+
+       
+    bool warning =false;
+    
+    return Scaffold(
+      appBar:AppBar(
+        backgroundColor: validated=='false'? Colors.red: Color.fromARGB(255, 44, 43, 43),
+        title:validated==''? null: Center(child: Text("Invalid Invite Code")),
+
+      ),
       body:  SingleChildScrollView(
         child: Column(
           children: [
@@ -90,13 +127,31 @@ class _InviteCodePageState extends State<InviteCodePage> {
       
                   InkWell(
                     onTap: (){
+                      DataBaseOps.instance.validateInvite(_inviteCode);
                       
-                      Navigator.push(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (context)=>LoginSignup(),
-                          ),
-                        );
+                      Timer(Duration(seconds: 2), (){
+                       
+                         validated=  (DataBaseOps.instance.validated).toString();
+                       
+                      
+                      });
+                      
+                      
+                        // print('yo');
+                      Timer(Duration(seconds: 2), (){
+                       print("validated= $validated");
+                        if (validated=="true"){
+                          Navigator.pop(context);
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginSignup()));
+                          
+                        }  
+                        setState(() {
+                         validated=  DataBaseOps.instance.validated;
+                       });
+                      });
+                       
+                        
+                      
                      
                     
                     },
@@ -167,5 +222,10 @@ class _InviteCodePageState extends State<InviteCodePage> {
       
       
     );
+
+                          
   }
+
+
+  
 }

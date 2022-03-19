@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "625037147659",
+    "project_id": "loginsignupassignment",
+    "storage_bucket": "loginsignupassignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625037147659:android:275565500297331a7a510e",
+        "android_client_info": {
+          "package_name": "com.example.login_signup_invitecode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625037147659-9t74svj6vi36ciaei22igriik88g19a1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxr7RcEudgFco1kS9b6xOOCP43gn9i1EA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625037147659-9t74svj6vi36ciaei22igriik88g19a1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

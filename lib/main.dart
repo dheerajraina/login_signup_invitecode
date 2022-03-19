@@ -119,17 +119,54 @@
 import 'package:flutter/material.dart';
 
 import 'pages/invite_code_page.dart';
-void main(){
+
+
+import 'firebase_options.dart';
+
+
+import 'package:firebase_core/firebase_core.dart';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+// void initialization() async{
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
+// }
+
+
+void main() async{
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  
 
   runApp(Assignment());
 }
 
 
-class Assignment extends StatelessWidget {
-  const Assignment({ Key? key }) : super(key: key);
 
+class Assignment extends StatelessWidget {
+  // const Assignment({ Key? key }) : super(key: key);
+
+
+  
+  
+  // String? tokenValue;
+  
+  
+  
   @override
   Widget build(BuildContext context) {
+
+  
+
+
+    // print("tokens=$tokens");
     return MaterialApp(
       title: "Assignment",
 

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:login_signup_invitecode/pages/invite_code_page.dart';
 
 
 class LoginSignup extends StatefulWidget {
@@ -16,10 +17,28 @@ class _LoginSignupState extends State<LoginSignup> {
     var size=MediaQuery.of(context).size;
     String phoneNumber="";
     return Scaffold(
-      appBar: AppBar(),
+      // appBar: AppBar(
+      //   actions: [
+
+      //   ],
+      // ),
       body: SingleChildScrollView(
         child: Column(
           children: [
+
+            Row(
+              children: [
+                Container(
+                  // color: Colors.pink,
+                  // width: size.width*1,
+                  
+                  child: IconButton(
+                    onPressed: (){
+                      Navigator.pop(context);
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>InviteCodePage()));
+                    }, icon: Icon(Icons.arrow_back))),
+              ],
+            ),
             SizedBox(
               height:size.height*0.05 ,
             ),
