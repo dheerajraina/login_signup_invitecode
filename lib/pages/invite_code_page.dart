@@ -1,6 +1,19 @@
+
+
 import 'package:flutter/material.dart';
 
 import 'login_signup_page.dart';
+
+
+
+
+
+
+
+
+
+
+
 
 class InviteCodePage extends StatefulWidget {
   const InviteCodePage({ Key? key }) : super(key: key);
@@ -14,9 +27,11 @@ class _InviteCodePageState extends State<InviteCodePage> {
   String _inviteCode='';
   @override
   Widget build(BuildContext context) {
+
+  
     var size =MediaQuery.of(context).size;
 
-    print(_inviteCode);
+    
     return Scaffold(
 
       body:  SingleChildScrollView(
@@ -51,6 +66,8 @@ class _InviteCodePageState extends State<InviteCodePage> {
                       });
                   },
                   decoration: InputDecoration(
+                    hintText:"          Add Invite Code    ",
+                    
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
       
@@ -72,7 +89,17 @@ class _InviteCodePageState extends State<InviteCodePage> {
       
       
                   InkWell(
-                    onTap: (){},
+                    onTap: (){
+                      
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (context)=>LoginSignup(),
+                          ),
+                        );
+                     
+                    
+                    },
                     child: Container(
                       width: size.width*0.5,
                       height: size.height*0.06,
