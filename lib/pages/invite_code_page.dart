@@ -41,8 +41,7 @@ class _InviteCodePageState extends State<InviteCodePage> {
 
   String _inviteCode='';
 
-  // List result=[];
-  //  var result;
+  
 
   String validated='';
 
@@ -65,7 +64,8 @@ class _InviteCodePageState extends State<InviteCodePage> {
        
     bool warning =false;
     
-    return Scaffold(
+    return size.width<450? Scaffold(
+      // logic for presenting an error if invite code entered is wrong
       appBar:AppBar(
         backgroundColor: validated=='false'? Colors.red: Color.fromARGB(255, 44, 43, 43),
         title:validated==''? null: Center(child: Text("Invalid Invite Code")),
@@ -221,6 +221,8 @@ class _InviteCodePageState extends State<InviteCodePage> {
       ),
       
       
+    ):Container(
+      child: Center(child: Text("Screen Size too big for the app")),
     );
 
                           

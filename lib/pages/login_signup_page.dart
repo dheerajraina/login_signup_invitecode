@@ -17,11 +17,7 @@ class _LoginSignupState extends State<LoginSignup> {
     var size=MediaQuery.of(context).size;
     String phoneNumber="";
     return Scaffold(
-      // appBar: AppBar(
-      //   actions: [
-
-      //   ],
-      // ),
+     
       body: SingleChildScrollView(
         child: Column(
           children: [

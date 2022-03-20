@@ -14,26 +14,20 @@ class DataBaseOps{
   static final DataBaseOps instance =DataBaseOps._instantiate();
 
   var validated="false";
-  void test(){
-    // print(_mainTokens);
-  }
+ 
 
-  //  Stream<QuerySnapshot> readInvites(inviteData) {
-  //     CollectionReference invitesCollection=_mainTokens.doc('6RuTYNZyyjTfLwo2qEnu').collection('/1');
-      
-  //     print(invitesCollection.doc().snapshots());
-
-  //     return invitesCollection.snapshots();
-  // }
-
+    //function that retrives data from the firestore
      validateInvite(enteredInviteCode){
 
      _mainTokens
      .get()
      .then((QuerySnapshot querySnapshot) {
        
+       // iterating through all data present in the database
         for(var doc in querySnapshot.docs) {
             // print("data= ${doc['inviteCode']}");
+            
+            //checking if entered invite code is present in the database
             if (enteredInviteCode==doc['inviteCode']){
               print("correct $enteredInviteCode");
               validated="true";
